@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQL01Commands", "SQL01Comma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL02Repositories", "SQL02Repositories\SQL02Repositories.csproj", "{B5CAE263-2C34-4BD7-8101-39B6123E07D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL03EFDatabaseFrist", "SQL03EFDatabaseFrist\SQL03EFDatabaseFrist.csproj", "{6B28BCD5-0E53-4F51-8D52-A4FA92A172BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B5CAE263-2C34-4BD7-8101-39B6123E07D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5CAE263-2C34-4BD7-8101-39B6123E07D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5CAE263-2C34-4BD7-8101-39B6123E07D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B28BCD5-0E53-4F51-8D52-A4FA92A172BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B28BCD5-0E53-4F51-8D52-A4FA92A172BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B28BCD5-0E53-4F51-8D52-A4FA92A172BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B28BCD5-0E53-4F51-8D52-A4FA92A172BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

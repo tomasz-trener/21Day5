@@ -63,8 +63,11 @@ namespace SQL02Repositories
             return persons;
         }
 
-        public void CreatePerson(Person person )
+        public void CreatePerson(Person person, string connectionString= null)
         {
+            if (connectionString == null)
+                connectionString = this.connectionString;
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -115,6 +118,22 @@ namespace SQL02Repositories
 
         }
 
+
+        public void TestingMethod1(int a,int b, int c)
+        {
+
+        }
+
+        public void TestingMethod2(int[] arr)
+        {
+
+        }
+
+        public void TestingMethod3(params int[] arr)
+        {
+            Console.WriteLine(arr[0]);
+            Console.WriteLine(arr[1]);
+        }
     }
 
 

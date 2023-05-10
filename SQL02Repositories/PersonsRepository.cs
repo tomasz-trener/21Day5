@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SQL02Repositories
 {
-    internal class PeronsRepository
+    internal class PersonsRepository
     {
        private string connectionString =
             "Server=(localdb)\\mssqllocaldb;Database=VolleyballDatabase;Integrated Security=True;";

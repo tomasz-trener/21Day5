@@ -9,8 +9,8 @@ namespace SQL02Repositories
 {
     internal class PersonsRepository
     {
-       private string connectionString =
-            "Server=(localdb)\\mssqllocaldb;Database=VolleyballDatabase;Integrated Security=True;";
+        private string connectionString =
+             "Server=(localdb)\\mssqllocaldb;Database=VolleyballDatabase;Integrated Security=True;";
 
         public Person[] GetPersons()
         {
@@ -37,7 +37,6 @@ namespace SQL02Repositories
             }
             return persons.ToArray();
         }
-
         public List<Person> GetPersons2()
         {
             List<Person> persons = new List<Person>();
@@ -63,5 +62,61 @@ namespace SQL02Repositories
             }
             return persons;
         }
+
+        public void CreatePerson(Person person)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command =
+                    new SqlCommand("INSERT INTO Persons (FirstName, LastName) VALUES(@FirstName, @LastName)", connection))
+                {
+                    command.Parameters.AddWithValue("@FirstName", person.FirstName);
+                    command.Parameters.AddWithValue("@LastName", person.LastName);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    //  Console.WriteLine($"{rowsAffected} rows affected.");
+                }
+            }
+        }
+
+        public void DeletePerson(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("DELETE FROM Person WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+                    int rowsAffected = command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+        public void Update(Person person)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                connection.Open();
+
+                using (SqlCommand command =
+                    new SqlCommand("UPDATE Persons SET FirstName =@FirstName, LastName =@LastName WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", person.Id);
+                    command.Parameters.AddWithValue("@FirstName", person.FirstName);
+                    command.Parameters.AddWithValue("@LastName", person.LastName);
+                    int rowsAffected = command.ExecuteNonQuery();          
+                }
+            }
+
+        }
+
     }
+
+
 }
+

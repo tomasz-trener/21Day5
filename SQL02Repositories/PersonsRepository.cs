@@ -63,7 +63,7 @@ namespace SQL02Repositories
             return persons;
         }
 
-        public void CreatePerson(Person person)
+        public void CreatePerson(Person person )
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
